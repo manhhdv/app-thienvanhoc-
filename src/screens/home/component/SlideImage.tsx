@@ -6,22 +6,22 @@ import Carousel from "react-native-snap-carousel";
 import { getRandomArray } from "../../../utils/function";
 import { useFocusEffect } from "@react-navigation/native";
 import { IObjectData, IData } from "../../../db/home-data";
+import { HeaderSlide } from "../../../types/dataType";
 export interface SlideProps {
-  data: IObjectData;
+  arrayData:HeaderSlide[]
 }
 
 const screenWidth = Dimensions.get("screen").width;
 
 const SlideImage = (props: SlideProps) => {
-  const { data, ...rest } = props;
-  const arrayData = Object.values(data);
+  const { arrayData, ...rest } = props;
   const [slideIndex, setSlideIndex] = useState(0);
   const [facts, setFacts] = useState<IData[]>(getRandomArray(arrayData, 4));
 
   useFocusEffect(
     useCallback(() => {
       setFacts(getRandomArray(arrayData, 4));
-    }, [data])
+    }, [arrayData])
   );
   return (
     <VStack alignItems={"center"} gap={"$2"}>

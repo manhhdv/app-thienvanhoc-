@@ -385,7 +385,7 @@ export const commonData: IObjectData = {
     id: "5",
     image:
       "https://thoitietso.com/media/2024/01/15/images/hien-tuong-bao-mat-troi-chinh-la-su-xao-tron-trong-ngoai-nhat-khuyen.JPG",
-    title: "Bão Mặt Trời - Hiện Tượng Vũ Trụ Đầy Sức Mạnh",
+      title: "Bão Mặt Trời - Hiện Tượng Vũ Trụ Đầy Sức Mạnh",
     description:
       "Bão Mặt Trời là các hiện tượng bùng nổ năng lượng từ Mặt Trời, có khả năng ảnh hưởng đến Trái Đất và các hệ thống điện tử. Hiểu rõ về bão Mặt Trời giúp chúng ta chuẩn bị và giảm thiểu các tác động tiêu cực từ các sự kiện này.",
     content: [

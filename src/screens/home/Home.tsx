@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, ScrollView, VStack } from "@gluestack-ui/themed";
 import SlideImage from "./component/SlideImage";
 
@@ -16,14 +16,22 @@ import {
 } from "../../db/home-data";
 import PopularList from "./component/PopularList";
 import { getRandomArray } from "../../utils/function";
+import { HeaderSlide } from "../../types/dataType";
+import { getAllHeaderSlideData } from "../../api/headerSlideData";
 
 type Props = {} & NativeStackScreenProps<BottomTabsParams, "Home">;
 
 const Home = ({ navigation }: Props) => {
+  const [headerSlideData,setheaderSlideData] = useState<HeaderSlide[]>([])
+  useEffect(() => {
+    getAllHeaderSlideData().then((data) => {
+      setheaderSlideData(data)
+    })
+  }, []);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <VStack flex={1} p={"$4"} gap={"$4"} bg="$white">
-        <SlideImage data={headerSlideData} />
+        <SlideImage arrayData={headerSlideData} />
         <PopularList
           popularData={getRandomArray(Object.values(mixedData), 5)}
         />

@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDwqkB68dwEL4gcwnEiKZwEe2IRNjN9xL8",
-  authDomain: "medical-reminder-93e72.firebaseapp.com",
-  projectId: "medical-reminder-93e72",
-  storageBucket: "medical-reminder-93e72.appspot.com",
-  messagingSenderId: "762408044033",
-  appId: "1:762408044033:web:48e77e95e2b151d50d2200",
-  measurementId: "G-B04J772JZE"
+  apiKey: "AIzaSyCv2j0O5-m2mFkLu_HNKVh30UAwrJBU_4w",
+  authDomain: "mtin-46024.firebaseapp.com",
+  projectId: "mtin-46024",
+  storageBucket: "mtin-46024.appspot.com",
+  messagingSenderId: "220576475196",
+  appId: "1:220576475196:web:def46108d5107a7205fb39",
+  measurementId: "G-YMSD475HFW"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
