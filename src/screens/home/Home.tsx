@@ -16,9 +16,10 @@ import {
 } from "../../db/home-data";
 import PopularList from "./component/PopularList";
 import { getRandomArray } from "../../utils/function";
-import { HeaderSlide } from "../../types/dataType";
+import { CommonData, HeaderSlide,PlanetData } from "../../types/dataType";
 import { getAllHeaderSlideData } from "../../api/headerSlideData";
-
+import { getAllCommonData } from "../../api/commonData";
+import { getAllPlanetData } from "../../api/planetData";
 type Props = {} & NativeStackScreenProps<BottomTabsParams, "Home">;
 
 const Home = ({ navigation }: Props) => {
@@ -26,6 +27,20 @@ const Home = ({ navigation }: Props) => {
   useEffect(() => {
     getAllHeaderSlideData().then((data) => {
       setheaderSlideData(data)
+    })
+  }, []);
+
+  const [commonData,setCommonData] = useState<CommonData[]>([])
+  useEffect(() => {
+    getAllCommonData().then((data) => {
+      setCommonData(data)
+    })
+  }, []);
+
+  const [planetData,setPlanetData] = useState<PlanetData[]>([])
+  useEffect(() => {
+    getAllPlanetData().then((data) => {
+      setPlanetData(data)
     })
   }, []);
   return (
@@ -37,13 +52,13 @@ const Home = ({ navigation }: Props) => {
         />
         <CardList
           title="Hệ mặt trời"
-          data={Object.values(commonData)}
+          arrData={Object.values(commonData)}
           displayType={EDisplayType.NORMAL}
           dataType={EData.COMMON}
         />
         <CardList
           title="Hành tinh"
-          data={Object.values(planetData)}
+          arrData={Object.values(planetData)}
           displayType={EDisplayType.NORMAL}
           dataType={EData.PLANET}
         />

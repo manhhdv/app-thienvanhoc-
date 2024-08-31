@@ -20,7 +20,7 @@ export interface waterArea{
     marine_life:string;
 }
 
-export interface commonData{
+export interface CommonData{
     id:string;
     title:string;
     image:string;
@@ -28,10 +28,13 @@ export interface commonData{
     content:{
         title:string;
         body:string;
+       
     }[]
 }
 
-export interface planetData{
+
+
+export interface PlanetData{
     id:string;
     title:string;
     image:string;

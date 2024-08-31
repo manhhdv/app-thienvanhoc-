@@ -4,9 +4,11 @@ import { HStack, Image, ScrollView, Text, VStack } from "@gluestack-ui/themed";
 import { EDisplayType } from "../../../types";
 import { useNavigation } from "@react-navigation/native";
 import { EData, IData } from "../../../db/home-data";
+import { CommonData } from "../../../types/dataType";
+
 
 type Props = {
-  data: IData[];
+  arrData: CommonData[];
   displayType: EDisplayType;
   title: string;
   dataType: EData;
@@ -30,7 +32,7 @@ const SIZE_TYPE: {
   },
 };
 
-const CardList = ({ data, displayType, title, dataType }: Props) => {
+const CardList = ({ arrData, displayType, title, dataType }: Props) => {
   const navigation = useNavigation<any>();
   return (
     <VStack>
@@ -44,7 +46,7 @@ const CardList = ({ data, displayType, title, dataType }: Props) => {
       </HStack>
       <ScrollView w={"$full"} horizontal showsHorizontalScrollIndicator={false}>
         <HStack gap={"$4"}>
-          {data.map((item: IData, index: number) => (
+          {arrData.map((item: CommonData, index: number) => (
             <TouchableOpacity
               key={index}
               onPress={() =>
